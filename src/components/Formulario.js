@@ -21,7 +21,7 @@ const [busqueda, guardarBusqueda] = useState({
 
 const {categorias} = useContext(CategoriasContext);
 
-const {buscarRecetas} = useContext(RecetasContext)
+const {buscarRecetas, guardarConsultar} = useContext(RecetasContext)
 // Función para leer los constenidos
 const obtenerDatosReceta = e => {
 guardarBusqueda({
@@ -39,6 +39,7 @@ guardarBusqueda({
     className="col-md-12"
     onSubmit = { e => {e.preventDefault();
       buscarRecetas(busqueda)
+      guardarConsultar(true)
     }}
     
     
