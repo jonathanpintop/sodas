@@ -1,4 +1,4 @@
-import React, {createContext} from 'react';
+import React, {createContext,useState} from 'react';
 
 
 
@@ -12,7 +12,7 @@ const RecetasProvider = (props) => {
 
     const [recetas,guardarRecetas] =  useState([])
     const [busqueda,buscarRecetas] =useState({
-   ingrediente: '',
+   nombre: '',
    categoria: ''
 
 

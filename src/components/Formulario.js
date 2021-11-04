@@ -35,7 +35,14 @@ guardarBusqueda({
 
 
   return (
-    <form className="col-md-12">
+    <form 
+    className="col-md-12"
+    onSubmit = { e => {e.preventDefault();
+      buscarRecetas(busqueda)
+    }}
+    
+    
+    >
       <fieldset className="text-center">
         <legend>Busca bebidas por categoria o Ingrediente</legend>
       </fieldset>
