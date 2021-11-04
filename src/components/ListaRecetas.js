@@ -16,7 +16,7 @@ const {recetas}= useContext (RecetasContext);
    <div className="row mt-5">
        {recetas.map(receta => (
 <Receta 
-    key={recetas.idDrink}
+    key={receta.idDrink}
     receta={receta}
 />
 
