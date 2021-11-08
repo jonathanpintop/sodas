@@ -24,8 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Receta = ({ receta }) => {
-  // Configuración del modal de material
+const Recipe = ({ recipe }) => {
   const [modalStyle] = useState(getModalStyle);
   const [open, setOpen] = useState(false);
 
@@ -39,37 +38,33 @@ const Receta = ({ receta }) => {
     setOpen(false);
   };
 
-  // Extraer los valores del context
-  const { informacion, guardarIdReceta, guardarReceta } =
-    useContext(ModalContext);
+  const { info, setIdRecipe, setRecipe } = useContext(ModalContext);
 
-  // Muestra y formatea los ingredientes
-
-  const mostrarIngredientes = (informacion) => {
-    let ingredientes = [];
+  const showIngredients = (info) => {
+    let ingredients = [];
     for (let i = 1; i < 16; i++) {
-      if (informacion[`strIngredient${i}`]) {
-        ingredientes.push(
+      if (info[`strIngredient${i}`]) {
+        ingredients.push(
           <li>
             {" "}
-            {informacion[`strIngredient${i}`]} {informacion[`strMeasure${i}`]}
+            {info[`strIngredient${i}`]} {info[`strMeasure${i}`]}
           </li>
         );
       }
     }
 
-    return ingredientes;
+    return ingredients;
   };
 
   return (
     <div className="col -md-4 mb-3">
       <div className="card">
-        <h2 className="card-header">{receta.strDrink}</h2>
+        <h2 className="card-header">{recipe.strDrink}</h2>
 
         <img
           className="card-img-top"
-          src={receta.strDrinkThumb}
-          alt={`Imagen de${receta.strDrink}`}
+          src={recipe.strDrinkThumb}
+          alt={`Imagen de${recipe.strDrink}`}
         />
 
         <div className="card-body">
@@ -77,30 +72,30 @@ const Receta = ({ receta }) => {
             type="button"
             className="btn btn-block btn-primary"
             onClick={() => {
-              guardarIdReceta(receta.idDrink);
+              setIdRecipe(recipe.idDrink);
               handleOpen();
             }}
           >
-            Ver Receta
+            View Recipe
           </button>
 
           <Modal
             open={open}
             onClose={() => {
-              guardarIdReceta(null);
-              guardarReceta({});
+              setIdRecipe(null);
+              setRecipe({});
               handleClose();
             }}
           >
             <div style={modalStyle} className={classes.paper}>
-              <h2>{informacion.strDrink}</h2>
-              <h3 className="mt-4">Instrucciones</h3>
-              <p>{informacion.strInstructions}</p>
+              <h2>{info.strDrink}</h2>
+              <h3 className="mt-4">Instructions</h3>
+              <p>{info.strInstructions}</p>
 
-              <img className="img-fluid my-4" src={informacion.strDrinkThumb} />
+              <img className="img-fluid my-4" src={info.strDrinkThumb} />
 
-              <h3>Ingredientes y cantidades</h3>
-              <ul>{mostrarIngredientes(informacion)}</ul>
+              <h3>Instructions and quantities</h3>
+              <ul>{showIngredients(info)}</ul>
             </div>
           </Modal>
         </div>
@@ -109,4 +104,4 @@ const Receta = ({ receta }) => {
   );
 };
 
-export default Receta;
+export default Recipe;
