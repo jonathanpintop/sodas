@@ -1,7 +1,7 @@
 
 # Drinks Finder ⚛️ - React
 
-Developed by Jonathan Pinto - 2021
+Developed by Jonathan Pinto - 2021 👨‍💻
 
 ## Description 📃
 
