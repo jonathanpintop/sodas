@@ -1,8 +1,27 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Drinks Finder ⚛️ - React
 
-## Available Scripts
+Developed by Jonathan Pinto - 2021
+
+## Description 📃
+
+
+Drinks 🍸 finder that allows you to search for different recipes filtered by  ingredients or by category.
+
+## Live Demo 💻
+https://laughing-bardeen-998243.netlify.app/
+
+## Screenshots 📷
+
+![Drinks 1](https://user-images.githubusercontent.com/77762236/140799771-5512702d-2611-4464-9214-9b0d5d11bb5f.png)
+
+![Drinks 2](https://user-images.githubusercontent.com/77762236/140799775-ab16dba1-4644-4e11-b63a-1dc2122c9113.png)
+
+![Drinks 3](https://user-images.githubusercontent.com/77762236/140799782-c7a09fb6-973d-432f-809d-07761b5f61e0.png)
+
+![Drinks 4](https://user-images.githubusercontent.com/77762236/140799792-0709a07a-e99a-4a7d-aa71-eab7da234b5c.png)
+
+## Available Scripts 👩‍💻
 
 In the project directory, you can run:
 
