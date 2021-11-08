@@ -7,7 +7,7 @@ const RecipesList = () => {
 
   return (
     <div className="row mt-5">
-      {recipes.map((recipe) => (
+      {recipes?.map((recipe) => (
         <Recipe key={recipe.idDrink} recipe={recipe} />
       ))}
     </div>
